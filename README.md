@@ -59,9 +59,11 @@ Note that backend development & devops will not be covered. This is a frontend c
 ## Day 2 - Styling, Selectors, & Basic JS Coding
 - [CSS - Styling Tags & Selectors]() - 1.5 hrs
 - [CSS Page Layouts]() 1.5 hrs
-- [Making Portfolio Progress]() 1 hr
-- [Basic JavaScript Coding & ES6]() 3 hrs
+- [CSS Responsive Design]() 1.5 hrs
+- [Making Portfolio Progress]() 1.5 hr
+- [Basic JavaScript Coding & ES6]() 1 hrs
 
 ## Day 3 - Build Tools & Portfolio
-- [Webpack & Organzing Code]() - 4 hrs
-- [Finishing up Our Work (Portfolio)]() - 3hrs
+- [Basic JavaScript Coding & ES6 Cont.]() 2 hrs
+- [Webpack & Organzing Code]() - 3 hrs
+- [Finishing up Our Work (Portfolio)]() - 2hrs
