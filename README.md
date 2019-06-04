@@ -56,4 +56,12 @@ Note that backend development & devops will not be covered. This is a frontend c
 - [Source Control Management]() - 3 - 4 hrs
 - [Publishing Your Work (Will become your portfolio)]() - 15 - 20 mins
 
-## Day 2 - 
+## Day 2 - Styling, Selectors, & Basic JS Coding
+- [CSS - Styling Tags & Selectors]() - 1.5 hrs
+- [CSS Page Layouts]() 1.5 hrs
+- [Making Portfolio Progress]() 1 hr
+- [Basic JavaScript Coding & ES6]() 3 hrs
+
+## Day 3 - Build Tools & Portfolio
+- [Webpack & Organzing Code]() - 4 hrs
+- [Finishing up Our Work (Portfolio)]() - 3hrs
