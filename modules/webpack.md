@@ -417,9 +417,11 @@ We can create a dynamic page loader that can read files in a registry of pages p
 
 ```js
 module.exports = [
-    {
-        title: 'About Page',
+    {        
         feature: 'about',
+        variables: {
+            title: 'About Page'
+        }
     }
 ];
 ```
@@ -478,14 +480,14 @@ function generatePlugin(page, pageChunks) {
     const folder = generateFolder(page);
     const template = `${folder}/page.html`;
 
-    return new HtmlWebpackPlugin({
-        title: page.title,
+    return new HtmlWebpackPlugin(Object.assign({        
         filename: `${page.feature}.html`,
         template: template,
         inject: 'body',
         chunks: pageChunks
-    });
+    }, page.variables));
 }
+
 
 exports.getGeneratedEntries = function() {
     return entries;
@@ -557,5 +559,7 @@ Perhaps the most important part of being able to build your markup is to enable 
 Let's first create a (very simple) header in `src/features/header/component.html` with the content:
 
 ```html
-
+<header>
+    <h1>I'm the page header, I'll be present on all page</h1>
+</header>
 ```
