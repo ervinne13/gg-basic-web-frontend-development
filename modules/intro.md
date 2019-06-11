@@ -39,9 +39,32 @@ __Markup & HTML Tags__
 
 HTML is the actual content of your websites/web applications. This is kind of like the skeleton of your design, an unpainted house if you may.
 
-For futher reading, please read up about the "Creative Commons" to avoid copyright problems when aquiring images for your work.
+__Source Control Management__
 
-[Markup & HTML Tags]() - 1.5 hrs
+*This is a MUST LEARN & PRACTICE* if you're really serious about being any kind of software developer (frontend, backend, fullstack, any role that does code). Take this session seriously. We will learn this first as we will practice this on the way while we are doing our activities.
+
+__CSS Styling & Layouts__
+
+You can't be a frontend developer if you don't know CSS. In the later parts of our sessions, we will also be very slightly touching Sass, a superpowered CSS where you can import, do variables, etc on styling. While we may not be able to explore Sass in detail, we will discuss how to set it up at least.
+
+__Responsive Design__
+
+We will be practicing mobile first design as well at least in our project. Here, we will be doing media queries and learn about the viewport and how to manage our content depending on the device size.
+
+__JavaScript__
+
+We will be learning the basics of JavaScript in preparation for us to be able to manage our build tool - Webpack - on day 3. In this session, we'll try to cover basic programming and some advanced es6 techniques required to keep up with Webpack and frontend development in general.
+
+__Webpack__
+
+For (to be) dedicated frontend developers, *this is a MUST LEARN*. This topic may be your hardest so far but bear with the instructor as this (along with source control management) will really make your resume/profile stand out.
+
+We will also be exploring practices on how to better manage your code and reuse components by customizing how our site/app is built.
+
+## Day 1 - HTML & Source Control Management
+
+- [Mocking Up with Adobe XD]() - 30 mins
+- [Markup & HTML Tags]() - 1.5 hrs
 - [Source Control Management]() - 3 - 4 hrs
 - [Publishing Your Work (Will become your portfolio)]() - 15 - 20 mins
 
@@ -52,6 +75,10 @@ For futher reading, please read up about the "Creative Commons" to avoid copyrig
 - [Making Portfolio Progress]() 1.5 hr
 - [Basic JavaScript Coding & ES6]() 1 hrs
 
+## Day 3 - Build Tools & Finishing Up Our Project
+
+- [Webpack]() - 3 hrs
+- [Refactoring & Finishing up Porfolio]() - 4 hrs
 
 ## About your Instructor
 
