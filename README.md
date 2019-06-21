@@ -57,12 +57,12 @@ Note that backend development & devops will not be covered. This is a frontend c
 
 ## Day 2 - Styling, Selectors, & Basic JS Coding
 - [Introduction to Adobe XD & Making Our First Design & Icons]() - 1 hr
-- [HTML Cont.]() - 1 hr
-- [CSS - Styling Tags & Selectors]() - 1.5 hrs
-- [CSS Page Layouts]() 1 hr
+- [HTML and Introduction to Basic Styling]() - 1 hr
+- [Webpack & Organzing Code]() - 3 hrs
 - [Making Portfolio Progress For Mobile Only]() 1.5 hr
 
 ## Day 3 - Build Tools & Portfolio
+- [CSS - Styling Tags & Selectors]() - 1.5 hrs
+- [CSS Page Layouts]() 1 hr
 - [CSS Responsive Design]() 1.5 hrs
-- [Webpack & Organzing Code]() - 3 hrs
-- [Finishing up Our Work (Portfolio)]() - 2hrs
+- [Finishing up Our Work (Portfolio)]() - 2 hrs
