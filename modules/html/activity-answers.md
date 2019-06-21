@@ -2,13 +2,13 @@
 
 If you haven't tried to answer them yet, please go back to the lesson by clicking [here](/modules/html/index.md).
 
-## Activity 1-1:
+## Activity 1:
 
 As you might expect, the headings continue to get smaller as you go from 1 to 6. But when you go to level 7 the text gets bigger. This is because the web browser is written so that it just ignores any tags that it does not know about. This is somewhat of a disadvantage as you don’t get any error messages, things just look wrong, and you have to figure out why.
 
 Incorrect heading closing tags are also ignored. The same reason as to using h7.
 
-## Activity 1-2
+## Activity 2
 
 __Sample answer for nesting paragraphs:__
 ```html
@@ -30,9 +30,9 @@ __Sample answer for heading inside paragraphs:__
 
 Same thing happens in headings inside paragraphs so dont bother nesting them as well. And if you're stubborn and still do, this will actually create a bug in your markup where css styles __does not apply to paragraphs that have headings inside them!__ (Follow along the instructor as he demonstrate this). So again DO NOT put heading tags in paragraphs.
 
-## Activity 1-3
+## Activity 3
 
-Texts are not the only "children" an element can have. You can usually put other elements inside elements (except of course in our samples in Activity 1-2). Putting `<a>` tags as "parent" of these elements makes the whole element a link.
+Texts are not the only "children" an element can have. You can usually put other elements inside elements (except of course in our samples in Activity 2). Putting `<a>` tags as "parent" of these elements makes the whole element a link.
 
 __Sample answers__
 
@@ -61,7 +61,7 @@ You are also not limited on the number of children an element can have.
 </a>
 ```
 
-## Activity 1-4
+## Activity 4
 
 All the tags you are tasked to do have different effect on text:
 
@@ -77,7 +77,7 @@ __Strong Text__
 <strong>Joseph Joestar</strong>
 ```
 
-Note that both Bold and Strong may look the same. They are semantically different though. Semantics may not express anything different in the users eyes, but it will on the developers'. Activity 1-5 answers will discuss this more in detail.
+Note that both Bold and Strong may look the same. They are semantically different though. Semantics may not express anything different in the users eyes, but it will on the developers'. Activity 5 answers will discuss this more in detail.
 
 __Italic Text__
 ```html
@@ -108,7 +108,7 @@ __Superscripts__
 2x<sup>2</sup>
 ```
 
-## Activity 1-5
+## Activity 5
 
 The `<b>` tag is for "offset text conventionally styled in bold". If you read deeper into the details you'll see it adds, "without conveying any extra emphasis or importance".
 
@@ -126,7 +126,7 @@ Note again that these are semantics. This might not mean much to a beginner, but
 
 You may read more about semantic HTML [here](http://seekbrevity.com/semantic-markup-important-web-design/). Bottom line is, semantics convey meaning but not appearance. As a beginner, you may (to a degree) neglect this a bit until such time that you are now comfortable in making your markup work. As you become more experienced though, please learn about semantic HTML as well.
 
-## Activity 1-6
+## Activity 6
 
 Your answer should be something like:
 ```html

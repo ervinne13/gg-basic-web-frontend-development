@@ -46,7 +46,7 @@ Headings are exactly the "heading" in microsoft word or similar software. It's d
 ... up to <h6>
 ```
 
-Activity 1-1:
+Activity 1:
 
 Create an html file (whatever you name it, just add .html) and try to write 7 heading elements h1 to h7. What happens on h7 tags? What happense if you close an h2 tag with an h1 or h3?
 (Answers at the end)
@@ -58,7 +58,7 @@ __Paragraps__
 <p>Multiple paragraph elements automatically add vertical spaces  between each other. Effectively imitating a paragraph in a letter.</p>
 ```
 
-Activity 1-2:
+Activity 2:
 
 What happens when you put a paragraph inside another paragraph? What about a header inside a paragraph?
 
@@ -89,7 +89,7 @@ A link can be created with:
 <a href="https://ervinne13.github.io">Click to view my profile</a>
 ```
 
-Activity 1-3:
+Activity 3:
 
 What happens if you put different types of elements aside from text inside the `<a>` tags?
 
@@ -100,7 +100,7 @@ Try it out with:
 
 __Element Children & Parent Children Relationship__
 
-If you did activity 1-3, you will notice that asid from strings of text, you can actually also specify other elements inside elements like in the case of links. An HTML document is actuall a "tree" of elements. Each element can have one or more "children" "nodes" (or leafs, but its more commonly refered to as nodes).
+If you did activity 3, you will notice that asid from strings of text, you can actually also specify other elements inside elements like in the case of links. An HTML document is actuall a "tree" of elements. Each element can have one or more "children" "nodes" (or leafs, but its more commonly refered to as nodes).
 
 Plain text, as in what we see inside `p` tags are also nodes, they are called "text nodes" everything inside an HTML document is a "tree" of "nodes":
 
@@ -112,7 +112,7 @@ __Simple Text Formatting__
 
 You may also do simple formatting with html tags. The instructor would like to leave this up to you as an activity though.
 
-Activity 1-4
+Activity 4
 
 What happens to text nodes if they are inside the following "Closing Elements / Open & Close Elements"?
 
@@ -124,7 +124,7 @@ What happens to text nodes if they are inside the following "Closing Elements / 
 - `<sub>`
 - `<sup>`
 
-Activity 1-5
+Activity 5
 
 What happense if you nest `<b>` tags together? What about `<strong>`?
 
@@ -214,7 +214,7 @@ There are many attributes you can use with the various table tags.
 
 Warning! Do not use tables to layout your page. We'll be discussing some best practices on how to achieve this when we get to do CSS Layouts.
 
-Activity 1-6:
+Activity 6:
 
 Create a table that looks like this:
 
