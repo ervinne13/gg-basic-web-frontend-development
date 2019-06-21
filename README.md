@@ -56,7 +56,7 @@ Note that backend development & devops will not be covered. This is a frontend c
 - [Publishing Your Work (Will later become your portfolio)]() - 15 - 20 mins
 - [Basic JavaScript Coding & ES6 (Part 1)]() 1 hr (If we still have time)
 
-## Day 2 - Basic Design, HTML, and Build Tools
+## Day 2 - Basic Design, JavaScript, and Build Tools
 - [Basic JavaScript Coding & ES6 (Part 2)]() 1 hr
 - [Webpack & Organzing Code]() - 3 hrs
 - [Introduction to Adobe XD & Making Our First Design & Icons]() - 1 hr
