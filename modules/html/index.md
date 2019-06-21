@@ -160,6 +160,60 @@ An ordered list has a `type` attribute. This can be set to:
 - I = uppercase roman numerals (I, II, III, IV, ...)
 - i = lowercase roman numerals (i, ii, iii, iv, ...)
 
+__Tables__
+
+A table is like a spreadsheet. It is composed of rows and header. An example would look something like:
+
+```html
+<table>
+    <tr>
+        <td>1</td>
+        <td>Russell</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+     <tr>
+        <td>2</td>
+        <td>John</td>
+        <td>Deere</td>
+        <td>80</td>
+    </tr>
+</table>
+```
+
+You may also write a header row by changing the column tags from `td` to `th`.
+
+```html
+<table>
+     <tr>
+        <th>Number</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Points</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Russell</td>
+        <td>Jackson</td>
+        <td>94</td>
+    </tr>
+     <tr>
+        <td>2</td>
+        <td>John</td>
+        <td>Deere</td>
+        <td>80</td>
+    </tr>
+</table>
+```
+
+There are many attributes you can use with the various table tags.
+
+- `table` * width - you can specify a width as a percentage or as a number of pixels. This attribute is useful for right now, but its use is not encouraged, as you are better off to use CSS to control the look of your table. We say that this attribute is deprecated * border - you can add borders to your tables as in the example above, but this tag is deprecated as well. * The spacing between the cells of the table. Also deprecated.
+- `td` * colspan – if you have a particular table where you need an extra wide column in some rows you can make a cell of your table span more than one column using the colspan attribute. Its value is the number of columns.
+- `tr` * rowspan – If you have a particular table where you need an column to span multiple rows you can make a cell of your table span more than one row using the rowspan attribute. Its value is the number of rows.
+
+Warning! Do not use tables to layout your page. We'll be discussing some best practices on how to achieve this when we get to do CSS Layouts.
+
 __Others__
 
 Line Breaks
