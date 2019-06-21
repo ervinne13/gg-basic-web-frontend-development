@@ -49,20 +49,21 @@ Note that backend development & devops will not be covered. This is a frontend c
 
 # Outline / Contents
 
-## Day 1 - Source Control Management, JavaScript Programming, and Deploying Static Sites
+## Day 1 - HTML, Source Control Management, Deploying Static Sites, & Basic JavaScript Programming 
 - [Introduction / Job Opportunties]() - 10-20 mins
-- [Source Control Management]() - 3 - 4 hrs
-- [Basic JavaScript Coding & ES6]() 3 hrs
-- [Basic HTML & Publishing Your Work (Will become your portfolio)]() - 15 - 20 mins
+- [HTML and Introduction to Basic Styling](/modules/html/index.md) - 2 hrs
+- [Source Control Management](/modules/git.md) - 3 - 4 hrs
+- [Publishing Your Work (Will later become your portfolio)]() - 15 - 20 mins
+- [Basic JavaScript Coding & ES6 (Part 1)]() 1 hr (If we still have time)
 
 ## Day 2 - Basic Design, HTML, and Build Tools
-- [Introduction to Adobe XD & Making Our First Design & Icons]() - 1 hr
-- [HTML and Introduction to Basic Styling]() - 1 hr
+- [Basic JavaScript Coding & ES6 (Part 2)]() 1 hr
 - [Webpack & Organzing Code]() - 3 hrs
+- [Introduction to Adobe XD & Making Our First Design & Icons]() - 1 hr
 - [Making Portfolio Progress For Mobile Only]() 1.5 hr
 
 ## Day 3 - Styling & Online Profile Making
 - [CSS - Styling Tags & Selectors]() - 1.5 hrs
 - [CSS Page Layouts]() 1 hr
-- [CSS Responsive Design]() 1.5 hrs
-- [Finishing up Our Work (Portfolio)]() - 2 hrs
+- [CSS Responsive Design]() 1 hr
+- [Finishing up Our Work (Portfolio)]() - 3 hrs
