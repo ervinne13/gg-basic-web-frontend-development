@@ -126,6 +126,36 @@ Note again that these are semantics. This might not mean much to a beginner, but
 
 You may read more about semantic HTML [here](http://seekbrevity.com/semantic-markup-important-web-design/). Bottom line is, semantics convey meaning but not appearance. As a beginner, you may (to a degree) neglect this a bit until such time that you are now comfortable in making your markup work. As you become more experienced though, please learn about semantic HTML as well.
 
+## Activity 1-6
+
+Your answer should be something like:
+```html
+<table>
+     <tr>
+        <th>Contact</th>
+        <th colspan="2">Phone Numbers</th>
+    </tr>
+    <tr>
+        <td rowspan="2">Doris</td>
+        <td>Mobile</td>
+        <td>09123456789</td>
+    </tr>
+    <tr>
+        <td>Home</td>
+        <td>779 12 34</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Ervinne</td>
+        <td>Mobile</td>
+        <td>09987654321</td>
+    </tr>
+    <tr>
+        <td>Home</td>
+        <td>997 43 21</td>
+    </tr>
+</table>
+```
+
 ## Want to go back to the lesson?
 
 You may do so by clicking [here](/modules/html/index.md).

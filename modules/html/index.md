@@ -208,11 +208,42 @@ You may also write a header row by changing the column tags from `td` to `th`.
 
 There are many attributes you can use with the various table tags.
 
-- `table` * width - you can specify a width as a percentage or as a number of pixels. This attribute is useful for right now, but its use is not encouraged, as you are better off to use CSS to control the look of your table. We say that this attribute is deprecated * border - you can add borders to your tables as in the example above, but this tag is deprecated as well. * The spacing between the cells of the table. Also deprecated.
-- `td` * colspan – if you have a particular table where you need an extra wide column in some rows you can make a cell of your table span more than one column using the colspan attribute. Its value is the number of columns.
-- `tr` * rowspan – If you have a particular table where you need an column to span multiple rows you can make a cell of your table span more than one row using the rowspan attribute. Its value is the number of rows.
+- `table` * `width` - you can specify a width as a percentage or as a number of pixels. This attribute is useful for right now, but its use is not encouraged, as you are better off to use CSS to control the look of your table. We say that this attribute is deprecated * border - you can add borders to your tables as in the example above, but this tag is deprecated as well. * The spacing between the cells of the table. Also deprecated.
+- `td` * `colspan` – if you have a particular table where you need an extra wide column in some rows you can make a cell of your table span more than one column using the colspan attribute. Its value is the number of columns.
+- `td` * `rowspan` – If you have a particular table where you need an column to span multiple rows you can make a cell of your table span more than one row using the rowspan attribute. Its value is the number of rows.
 
 Warning! Do not use tables to layout your page. We'll be discussing some best practices on how to achieve this when we get to do CSS Layouts.
+
+Activity 1-6:
+
+Create a table that looks like this:
+
+<table>
+     <tr>
+        <th>Contact</th>
+        <th colspan="2">Phone Numbers</th>
+    </tr>
+    <tr>
+        <td rowspan="2">Doris</td>
+        <td>Mobile</td>
+        <td>09123456789</td>
+    </tr>
+    <tr>
+        <td>Home</td>
+        <td>779 12 34</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Ervinne</td>
+        <td>Mobile</td>
+        <td>09987654321</td>
+    </tr>
+    <tr>
+        <td>Home</td>
+        <td>997 43 21</td>
+    </tr>
+</table>
+
+Hint: This is going to require both `rowspan` and `colspan` attributes. This is difficult to do at once so try to make 1 column or row work first, then the rest.
 
 __Others__
 
@@ -276,6 +307,112 @@ HTML 4.01 Strict
 
 In general, you should set this to HTML5. This is so that even if HTML6 is released, the browser will still interpret your markup as HTML5 and will not apply HTML6 features yet as that may break your webpage.
 
+## Basic Semantic HTML
+
+Some tags in HTML are designed for you to use in creating a logical structure for your page. As you have probably noticed many sites have a navigation bar in the header, and have some information about the page in a footer. Many web pages have sidebars, and of course blogs and many news sites are divided into articles. Scholarly web sites are divided into parts and sections.
+
+Example:
+
+![](https://www.w3schools.com/html/img_sem_elements.gif)
+
+```html
+<html>
+    <body>
+        <header>
+            <p>This is text in the header</p>
+        </header>
+        <aside>
+            <p>This is a side comment</p>
+        </aside>
+        <article>
+            <p>This is some text for an article</p>
+        </article>
+        <p>Notice that there is nothing special about the location of any of this text.  Without CSS the semantic tags simply divide the document logically</p>
+    </body>
+</html>
+```
+
+Again, semantic tags are are working like `div` elements without styling. But it would now be easier for us to apply CSS later on and understand the parts of the page better with semantic tags.
+
+In fact, if you try to run the code above, it would just look like this (without the lines):
+
+---
+
+<html>
+    <body>
+        <header>
+            <p>This is text in the header</p>
+        </header>
+        <aside>
+            <p>This is a side comment</p>
+        </aside>
+        <article>
+            <p>This is some text for an article</p>
+        </article>
+        <p>Notice that there is nothing special about the location of any of this text.  Without CSS the semantic tags simply divide the document logically</p>
+    </body>
+</html>
+
+---
+
+Some info, before HTML5, we only really have `div` and `span` as invisible strucutral tags.
+
+## Applying Basic Styling
+
+You normally shouldn't put styles directly in HTML, but before CSS existed, this is how it was done.
+
+To "style" an element, you can do something like:
+
+```html
+<p style="font-weight: bold">This text should be bold even if it's defined in a paragraph tag</p>
+```
+
+(Try it out on your own)
+
+### Parts of a Style
+
+The style is defined using the `style` attribute which can be added to almost any kind of tag in HTML.
+
+The code `font-weight: bold` is what we call a "rule set". Each rule set can be separated by a semicolon (;). For example, we can set two (or more) rulesets in a style attribute of an element like so:
+
+```html
+<p style="font-weight: bold; font-size: 30px;">This text should be bold even if it's defined in a paragraph tag</p>
+```
+
+(Try it out on your own)
+
+A rule set is a "key-value" pair divided by a colon (:) where the left hand side defines what property to set, and on the right, the value of that property. 
+
+For example, we can search google about __"what are the possible font-weight property values"__? (Go ahead and google it out)
+
+As of 2019, it should show a table of possible values listing "normal", "bold", "bolder", "lighter", and so on. See full reference [here](https://htmldog.com/references/css/properties/font-weight/)
+
+It looks ugly though, so bear with me until we do lessons on CSS.
+
+### Don't be ashamed to Google
+
+It's impossible to memorize or know about each and every tag, element, attribute, style/css property, etc. so Google is your friend. Don't be ashamed to search for answers in Google whenever you don't know something.
+
+The important thing is that you understand and at least know about the terminologies so you can pin point your search results.
+
+## Styles are Cascading
+
+Styles in HTML or CSS are naturally cascading. This means that styles of the parent element are "cascades" or applies to all of its children elements.
+
+Consider the code below:
+
+```html
+<p style="color: green"> An algebraic expression: 2x<sup>2</sup> </p>
+```
+
+(Try it out yourself)
+
+You may stop the cascading effect by specifying a style to the child elements as well. For example:
+
+```html
+<p style="color: green"> An algebraic expression: 2x<sup style="color: blue">2</sup> </p>
+```
+
 ## Answers to all activities
 
 Congratulations! You now know how to code in HTML, that makes you a web developer!
@@ -285,6 +422,10 @@ As your reference, [click here](to view answers to all the activities we did).
 
 First, you may read up about all the other HTML tags [here](https://www.w3schools.com/tags/tag_comment.asp) (navigate in the left bar for each tags and their definitions).
 
-## Next Topic: Basic Styling
+## Next Topic: Source Control Management
 
-Click [here](/modules/html/basic-styling.md) to go to the next topic.
+Let's take a break on development first and learn about source control management. This topic is a must master (not just must know) if you're serious about being a web developer in the future.
+
+We'll be learning this first before moving on so that all of our practice code can be saved in GIT.
+
+Click [here](/modules/git.md) to go to the next topic.
