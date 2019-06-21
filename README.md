@@ -53,7 +53,7 @@ Note that backend development & devops will not be covered. This is a frontend c
 - [Introduction / Job Opportunties]() - 10-20 mins
 - [Source Control Management]() - 3 - 4 hrs
 - [Basic JavaScript Coding & ES6]() 3 hrs
-- [Basic HTML Publishing Your Work (Will become your portfolio)]() - 15 - 20 mins
+- [Basic HTML & Publishing Your Work (Will become your portfolio)]() - 15 - 20 mins
 
 ## Day 2 - Styling, Selectors, & Basic JS Coding
 - [Introduction to Adobe XD & Making Our First Design & Icons]() - 1 hr
