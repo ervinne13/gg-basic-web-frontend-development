@@ -416,7 +416,7 @@ You may stop the cascading effect by specifying a style to the child elements as
 ## Answers to all activities
 
 Congratulations! You now know how to code in HTML, that makes you a web developer!
-As your reference, [click here](to view answers to all the activities we did).
+As your reference, [click here](https://github.com/ervinne13/gg-basic-web-frontend-development/blob/master/modules/html/activity-answers.md) to view answers to all the activities we did.
 
 ## What to do next? (Outside this workshop)
 
