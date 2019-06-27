@@ -298,7 +298,7 @@ You want to change the font of a specific paragraph. So you will likely google:
 "CSS Property for font type"
 
 Which will result in the properties:
-|-|-|
+
 |Property|Description|
 |-|-|
 |font|Sets all the font properties in one declaration|

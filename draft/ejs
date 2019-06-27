@@ -1,0 +1,10 @@
+
+
+ejs-webpack-loader
+
+npm install -D ejs ejs-html-loader
+
+npm install -D ejs-compiled-loader
+
+
+https://dev.to/pldg/build-a-simple-static-site-generator-with-webpack-5a29

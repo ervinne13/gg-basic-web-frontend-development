@@ -50,6 +50,7 @@ After you set the `overflow` property, you can guess how each of these values no
 - scroll = Creates a scrollbar 
 - auto = Let's the page choose for the best possible value (scroll in this case)
 
+```html
 <html>
     <head>
         <style>
@@ -61,7 +62,7 @@ After you set the `overflow` property, you can guess how each of these values no
                 padding: 25px;
                 border: 10px solid blue;
                 margin: 25px;
-                height: 100px;
+                height: 100px;                
             }
         </style>
         </head>
@@ -71,4 +72,58 @@ After you set the `overflow` property, you can guess how each of these values no
                 </p>
             </section>
         </body>
+</html>
+```
+
+__Activity 4__
+
+The output should be something like:
+
+```html
+<html>
+   <head>
+      <style>
+      </style>
+    </head>
+<body>
+    <p>the quick brown fox jumped over the lazy dog.  the quick brown fox jumped over the lazy dog.  the quick brown fox jumped over the lazy dog.  <img style="float: left" src="https://mobilelegends.gcube.id/wp-content/uploads/sites/6/2017/12/Mobile-Legends-Items-Magic-3-Calamity-Reaper.png" /> the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog. the quick brown fox jumped over the lazy dog.
+    </body>
+</html>
+```
+
+__Activity 5__
+
+We can "prevent" overlapping by adding a margin to the content that's not a header.
+
+Then, to resolve the scrolling issue, we can add a background color white and have the whole header span 100% through the page so that it can hide the content behind it.
+
+See the whole solution [here](/modules/css/long-samples/position-fixed-non-overlapping.md)
+
+__Activity 6__
+
+The `left` coordinate should still be the same: `-100px` from where it originally came from. But the top should be at least double at `200px` to imitate a "cascading" image.
+
+<html>
+    <head>
+        <style>
+            img.card {
+                height: 200px;
+            }
+            img#b {
+                position: relative;
+                top: 100px;
+                left: -100px;
+            }
+            img#c {
+                position: relative;
+                top: 0px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="a" class="card" src="https://image.flaticon.com/icons/png/128/70/70367.png" />
+        <img id="b" class="card" src="https://image.flaticon.com/icons/png/128/684/684831.png" />
+        <img id="c" class="card" src="https://image.flaticon.com/icons/png/128/1077/1077976.png" />
+    </body>
 </html>

@@ -554,6 +554,12 @@ IMPORTANT: You should remember that you should only really use this approach if 
 
 Perhaps the most important part of being able to build your markup is to enable common markup. Consider an HTML file that has a header, footer, and a navigation. All of those components are also present in other html files/pages. Repeating code will hurt maintainability of your application so you should have separate markup for each.
 
+For this, we'll be needing an extra "html-loader" to load the files while in webpack:
+
+```bash
+npm install -D html-loader
+```
+
 ### Creating a Common Header
 
 Let's first create a (very simple) header in `src/features/header/component.html` with the content:
