@@ -283,6 +283,10 @@ There are several different ways to affect the positioning of html elements eith
 
 If you understood correctly, you should be wary of using both `fixed` and `absolute` as they distrupt or go out of the normal flow of elements in an HTML document.
 
+Whenever you specify a `fixed`, `absolute`, or `relative` position, you may now set the actual positioning you want through the coordinate properties `top`, `bottom`, `left`, and `right`.
+
+![](/img/html-coordinates.png)
+
 To better understand positioning, let's explore some examples:
 
 ### Fixed Position Elements
@@ -297,7 +301,17 @@ Notice that in the fixed element example, your header overlaps with the content.
 - Hint 2: Review our topic on box elements
 - Hint 3: After adding a solution from box elements, when you scroll, the problem will still exist. Maybe add a background color (white will do) and width may resolve it?
 
+### Reviewing the Coordinates
+
+![](/img/html-coordinates.png)
+
+Remember the coordinate system we've put? What happens if you specify bottom 0px instead of top? __You may think that it would stick to the bottom of the page, but no__. Remember that the top left of the page is the coordinate 0,0. So your fixed element is now at the top of the page outside its visible area.
+
+So it's actually difficult to fix things at the bottom of the page because you have to compute for the page size first (which varies a lot from device to device).
+
 ### Relatively Positioned Elements
+
+Relatively positioned elements can be moved __relative to its current position__.
 
 Let's get some images (at least 3) from the internet and have them stack at each other. You may use the following:
 
@@ -346,3 +360,554 @@ __Activity 6:__
 On your own, add a rule for the third image to add it to the stack. They should appear as if they are cascading.
 
 Hint: to actually cascade, you might have to use a larger `top` coordinate.
+
+Alsy try to make the webpage narrower (just change the size of your browser) and see what happens to your markup.
+
+__Takeaway from Activity 6__
+
+One of the key take aways from activity 6 is that relatively positioned elements can be unpredictable in a lot of times because it's still somewhat going with the flow of elements while also doing modifications in its position. __Use this with caution.__
+
+### Absolute Positioned Elements
+
+Absolutely positioned elements are absolute, but relative to their container! The official rule is that absolute items are positioned using the the upper left corner of the first non-static container as the origin. If there is no non-static container, then the html tag will be used and the origin will be the upper left corner of the page.
+
+Let's create another markup based on our sample from relative positioning:
+
+```html
+<html>
+    <head>
+        <style>
+            img.card {
+                height: 200px;
+            }
+            img#a {
+                position: absolute;
+                top: 10px;
+                left: 50px;
+            }
+            img#b {
+                position: absolute;
+                top: 100px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="image-container">
+                <img id="a" class="card" src="https://image.flaticon.com/icons/png/128/70/70367.png" />
+                <img id="b" class="card" src="https://image.flaticon.com/icons/png/128/684/684831.png" />
+            </div>
+        </div>
+    </body>
+</html>
+```
+
+Try playing around the position to see. Remember that absolute positioned elements' position is based on its parent.
+
+__Activity 7:__
+
+Notice the div with id = image-container within another div? What happens if you put position absolute and some coordinates to it as well? Whatever the location/coordinates is up to you, just move it from 0,0.
+
+### Position Summary
+
+- __Fixed__ positioned elements stay fixed regardless of the container.
+- __Relatively__ positioned elements can be moved relative to its __own__ current position
+- __Absolute__ positioned elements can be moved __relative to its container or closest positioned parent.__
+
+## Creating a Layout
+
+Now that we've learned a lot, let's try creating a layout similiar to what we have in the desktop version of our profile page plan.
+
+The intent here is to make us fail and try lots of workarounds when trying to lay things out before finally giving up and learning about `display: flex`. The practices in the next sections are also useful for experience and if you inherit projects that use them since `display: flex` is pretty new.
+
+This is not yet the actual layout as the image you provide may have different width. We'll just be practicing.
+
+Let's first start with this markup:
+
+```html
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <section class="main-screen">
+            <div class="-content">
+
+            </div>
+            <div class="-right-image-container">
+                
+            </div>
+        </section>
+    </body>
+</html>
+```
+
+We have `.main-screen` containing two divs, `.-content` and `-right-image-container`. We want to display `.-content` and `-right-image-container` side by side with consuming 100% height and consuming 60% and 40% of the page respectively.
+
+Since both of them should be displayed full height, let's style their container `.main-screen`:
+
+```css
+.main-screen {
+    height: 100vh;
+}
+```
+
+Note that you can't actually use 100% as height as the body does not consume `100%` of the page. It's only consuming what its content consumes. We've learned that the unit `vh` though means the height of the viewport. 1vh = 1% of the visible page.
+
+You may add in a background color to check if it really does consume the whole page, remove it afterwards though.
+
+Next is the left and right parts of the screen, our main content should consume 60% with and 100% height of its parent (thus = 100vh). 
+
+```css
+.main-screen .-content {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(122, 122, 122);
+}
+
+.main-screen .-right-image-container {
+    width: 40%;
+    height: 100%;
+    background-color: black;
+}
+```
+
+Test it out, you'll notice that it's not as you expect. They are not aligned since the `.-right-image-container` goes to the next line. If you inspect, you should notice that by default, divs are displayed using `display: block;`. Review our lesson in relation to this and you should now deduce that we can use `display: inline-block`. The rule `display: inline` wont work as well because as mentioned, width and height does not take effect for fully inline elements. Modify your styles to:
+
+```css
+.main-screen .-content {
+    width: 60%;
+    height: 100%;
+    display: inline-block;
+    background-color: rgb(122, 122, 122);
+}
+
+.main-screen .-right-image-container {
+    width: 39%;
+    height: 100%;
+    display: inline-block;
+    background-color: black;
+}
+```
+
+That should should fix it right? Still wrong.
+Try setting `.-content`'s width to 59% instead or `.-right-image-container`'s width to 39%, either of the two. You'll now achieve what we want to achieve.
+
+This solution is weird though, what happened to the remaining 1%?
+
+The divs do not display inline with each other at 60% + 40% width because inline elements respect the (literal) whitespace between your divs in the html, as in `</div> <div>` (in this case, a new line instead of just space). That sounds silly, but that is essentially what is going on.
+
+The space between your first `</div>` and second `<div>` create an actual gap that you can see on the page. This gap carries its own static width that must be accounted for when adding up to 100%.
+
+With this in mind, you can essentially achieve the desired result by removing the space between your inline divs in the html.
+
+```html
+<section class="main-screen">
+    <div class="-content">
+
+    </div><div class="-right-image-container">
+        
+    </div>
+</section>
+```
+
+This fix is awkward though, no sane person would let your code behavior be dependent awkward on whitespacing so revert that and let's find a better way. One way to "fix" this, is to add the ruleset `white-space: nowrap;` on the container element so that the white spaces don't manifest between divs.
+
+```css
+.main-screen {
+    height: 100vh;
+    white-space: nowrap;
+}
+```
+
+The problem with this solution is that it does not remove the white-space between the divs. It just ignores it. 
+
+#### Breaking the Flow
+
+Try adding actual content in your markup, update it to:
+
+```html
+<section class="main-screen">
+    <div class="-content">
+        <h1>Ow Broken</h1>
+    </div>
+    <div class="-right-image-container">
+        
+    </div>
+</section>
+```
+
+Wow, your layout is now broken beyond compare. We can try other workarounds like giving up on displaying it `block-inline` but workarounds are the work of the devil (kidding, but it usually is, it may work now, but will give you more headache later on).
+
+Let's first try the workaround:
+
+```css
+.main-screen {
+    height: 100vh;
+}
+
+.main-screen .-content {
+    width: 60%;
+    height: 100%;
+    float: left;
+    background-color: rgb(122, 122, 122);
+}
+
+.main-screen .-right-image-container {
+    width: 40%;
+    height: 100%;
+    float: left;
+    background-color: black;
+}
+```
+
+We've removed display: `inline-block` and replaced it with `float: left;`.
+
+Nice! So far it's fixed. But try adding some content after the `-content` and `-right-image-container` div:
+
+```html
+<section class="main-screen">
+    <div class="-content">
+        <h1>Nice, not broken</h1>
+    </div>
+    <div class="-right-image-container">
+        
+    </div>
+    Some content after
+</section>
+```
+
+Content does not display because it's behind the two divs. This is because they are "floating" outside the normal flow of elements.
+
+## Finally Using Flex
+
+Frustrating right? You solve one problem and another problem pops out. Slap in more workarounds and the problem "should" be fixed eventually. We don't want workarounds as much as possible though.
+
+So now, the instructor wants you to remove the `float` or `display: inline-block` in the child elements and then just add `display: flex` in the parent element. The end css should look like:
+
+```css
+.main-screen {
+    height: 100vh;
+    display: flex;
+}
+
+.main-screen .-content {
+    width: 60%;
+    height: 100%;
+    background-color: rgb(122, 122, 122);
+}
+
+.main-screen .-right-image-container {
+    width: 40%;
+    height: 100%;
+    background-color: black;
+}
+```
+
+That should resolve everything, even the text outside `-content` and `-right-image-container`. Even adding long text in the `.-content` works flawlessly:
+
+```html
+<div class="-content">
+    <h1>Nice, not broken</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, pariatur autem. Hic quibusdam eius sit harum dignissimos aliquam voluptate quo necessitatibus impedit quis quam molestias alias debitis, ut unde quas?</p>
+</div>
+<div class="-right-image-container">
+    
+</div>
+```
+
+CSS Flexbox is a large topic of its own, see [here, this is the instructor's reference](https://css-tricks.com/snippets/css/a-guide-to-flexbox/). Its relatively new and was introduced just last 2017 so you will encounter code that does not yet use flexbox (thus, those bad mistakes we made earlier) if you inherit old code.
+
+The main idea behind the flex layout is to give the container the ability to alter its items' width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space, or shrinks them to prevent overflow.
+
+### Flexbox Basics
+
+![](https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg)
+
+|Terminology|Description|
+|-|-|
+|main axis|The main axis of a flex container is the primary axis along which flex items are laid out.|
+|main-start/main-end| The flex items are placed within the container starting from main-start and going to main-end.|
+|main size|A flex item's width or height, whichever is in the main dimension, is the item's main size. The flex item's main size property is either the ‘width’ or ‘height’ property, whichever is in the main dimension.|
+|cross axis|The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.|
+|cross-start|cross-end|Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.|
+|cross size|The width or height of a flex item, whichever is in the cross dimension, is the item's cross size. The cross size property is whichever of ‘width’ or ‘height’ that is in the cross dimension.|
+
+The main axis, is not necessarily just horizontal. We can actually set the axis by specifying the `flex-direction`:
+
+#### The Flex Direction
+
+Using the property `flex-direction`, you may change how the elements inside a flexbox is displayed.
+
+![](https://css-tricks.com/wp-content/uploads/2018/10/flex-direction.svg)
+
+Possible valuefor `flex-direction`:
+
+|Direction|Description|
+|-|-|
+|row|(Default) going left to right|
+|row-reverse| Right to left|
+|column|Going top to bottom|
+|column-revers|Bottom to top|
+
+Now try adding `flex-direction` property on your `.main-screen` to see what happens.
+
+#### Using Flex to Display Variable Width Elements
+
+We know that our right panel (`-right-image-container`) will not have a set width of 40% but will depend on the ration of the image we upload. This is where `flexbox` will shine more. We can now remove the width property from both the panels. In fact, we can remove the whole `.main-screen .-right-image-container` as we don't need to style it, instead, we'll put `.main-screen .-right-image-container` like so:
+
+```css
+.main-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-screen .-content {
+    height: 100%;
+}
+
+.main-screen .-right-image-container img {
+    height: 100%;
+}
+```
+
+Flex will automatically try to find the ideal width (since we specified flex direction row) to fill all the space in it. Now, whatever the width of your image is after applying ratio depending on screen height, the `-content` will automatically adjust!
+
+We can further simplify our css by combining the panels:
+
+```css
+.main-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-screen .-content, 
+.main-screen .-right-image-container img {
+    height: 100%;
+}
+```
+
+For now, we're only really concerned on laying things out by percentage so let's skip other details of flex for now. We'll revisit flex again later when we get to screens that need it.
+
+## Laying Out Evenly
+
+The layout for the first screen is pretty much done, we can now move on to displaying the recommendations. We plan to display 3 recommendations evenly in a horizontal fashion so what we know already works. For example, add the following:
+
+In your styles:
+```css
+.recommendations-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendation-place-holder {
+    width: 25%;
+    min-width: 200px;
+    height: 400px;
+    background-color: grey;
+}
+```
+
+and in your markup:
+```html
+<section class="recommendations-screen">
+    <div class="recommendation-place-holder"></div>
+    <div class="recommendation-place-holder"></div>
+    <div class="recommendation-place-holder"></div>
+</section>
+```
+
+This will display 3 placeholders for recommendation component displayed as vertical rectangles. Notice that it sticks together though. This is because it's displaying content at the start:
+
+![](https://css-tricks.com/wp-content/uploads/2018/10/align-content.svg)
+
+We should display it instead with space between by adding the ruleset: `justify-content: space-between;`
+
+```css
+.recommendations-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+```
+
+We can also add some padding at the left and right for aesthetics by adding `padding: 0 50px;`. This is a shorthand method of defining margins so that it will display 0 margin on both top and bottom, then 50px on left and right.
+
+```css
+.recommendations-screen {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+```
+
+You'll notice that this does not display as we intend to, the panel overflows to the right of the page. This is because despite having a padding (even a margin), the panel will still take up 100% of the width as we told it to. Flexbox's calculation does not include margin and padding, only the content inside it. The solution to this is to create another panel that has the margin (section), and inside it, another panel (div) inside it that is displayed flex. Do the following updates:
+
+... to your css:
+
+```css
+.recommendations-screen {
+    padding: 0 50px;
+}
+
+.recommendations-screen > .-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+```
+
+... and to your HTML
+```html
+<section class="recommendations-screen">
+    <div class="-container">
+        <div class="recommendation-place-holder"></div>
+        <div class="recommendation-place-holder"></div>
+        <div class="recommendation-place-holder"></div>
+    </div>
+</section>
+```
+
+### Completing Our Layout
+
+This will be the last area we need to layout for our online profile, our employment history.
+
+We'll have to display the logo of the company at the left and a box containing a header and a text to the right.
+
+We may consider each of these work experiences as articles so let's declare the markup as such:
+
+```html
+<article class="employement-history-entry">
+    <img class="company-logo" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png" alt="NuWorks Interactive Labs. Inc. Logo">
+    <div class="-body">
+        <h4>NuWorks Interactive Labs Inc.</h4>
+        <strong>Role: Fullstack Developer</strong>
+        <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
+    </div>
+</article>
+```
+
+<article class="employement-history-entry">
+    <img class="company-logo" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png" alt="NuWorks Interactive Labs. Inc. Logo">
+    <div class="-body">
+        <h4>NuWorks Interactive Labs Inc.</h4>
+        <strong>Role: Fullstack Developer</strong>
+        <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
+    </div>
+</article>
+
+The markup should be something like above. To be able to test well, just make sure you have a relatively long description of your role
+
+Let's make the image rounded first, we can do that by specifying equal `border-radius` to whatever the `width` and `height` is (must be equal).
+
+```css
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+```
+
+Next we can lay the elements out. We want them to display inline-block with each other, so let's write css that will put `inline-block` to all of `.employement-history-entry`'s children:
+
+```css
+.employement-history-entry > * {
+    display: inline-block;
+}
+```
+
+The problem though, is that if the screen size is narrow (try resizing your webpage). We've dealt with this problem before. The solution is (again), make the parent element `display: flex`:
+
+```css
+.employement-history-entry {
+    display: flex;
+}
+```
+
+We're pretty much done, but before we close this, let's style the content a bit so that it can display as a box with appropriate inner spaces (padding):
+
+```css
+.employement-history-entry > .-body {
+    margin-left: 20px;
+    padding: 0px 15px;
+    width: 500px;
+}
+```
+
+The property `margin-left` is there to provide a space bet. the image while `padding` is used to enable inner spaces. We've also added a with so that it's consistent with all our other experiences. We can also add in a background image to immitate a box:
+
+```css
+.employement-history-entry > .-body {
+    margin-left: 20px;
+    padding: 0px 15px;
+    max-width: 500px;
+    background-color: #ececec;
+}
+```
+
+Let's also add a subtle box shadow:
+
+```css
+.employement-history-entry > .-body {
+    margin-left: 20px;
+    padding: 0px 15px;
+    max-width: 500px;
+    background-color: #ececec;
+    box-shadow: 0px 0px 56px -8px #aaaaaa;
+}
+```
+
+#### Box Shadow
+
+The possible property values of a box shadow is as follows:
+
+```css
+box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
+```
+
+What we just did is to provide 0 offset (adding offset will imitate a one sided shadow, try it out) so that shadow is pread around evenly like a border, then add a large blur of `56px`. The value spread = -8px is there to imitate a somewhat rounded blur
+
+<html>
+    <head>
+        <style>
+            .employement-history-entry {
+                display: flex;
+            }
+            .employement-history-entry > * {
+                display: inline-block;
+            }
+            .employement-history-entry > .-body {
+                margin-left: 20px;
+                box-shadow: 0px 0px 56px -8px black;
+                padding: 0px 15px;
+            }
+            .company-logo {
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <section class="experience-screen">
+            <article class="employement-history-entry">
+                <!-- <div class="company-logo"></div> -->
+                <img class="company-logo" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
+                <div class="-body">
+                    <h4>NuWorks Interactive Labs Inc.</h4>
+                    <strong>Role: Fullstack Developer</strong>
+                    <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
+                </div>
+            </article>
+        </section>
+    </body>
+</html>

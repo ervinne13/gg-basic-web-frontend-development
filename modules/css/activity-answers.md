@@ -101,8 +101,11 @@ See the whole solution [here](/modules/css/long-samples/position-fixed-non-overl
 
 __Activity 6__
 
-The `left` coordinate should still be the same: `-100px` from where it originally came from. But the top should be at least double at `200px` to imitate a "cascading" image.
+Remember that position relative can be understood as relative to its original position, that's why we double the coordinates from image b.
 
+Be careful though, try to make your page narrower. This will put the images in an awkward position because their new "original" positions can be in a new line. Thus behaving a lot differently.
+
+```html
 <html>
     <head>
         <style>
@@ -116,8 +119,8 @@ The `left` coordinate should still be the same: `-100px` from where it originall
             }
             img#c {
                 position: relative;
-                top: 0px;
-                left: 200px;
+                top: 200px;
+                left: -200px;
             }
         </style>
     </head>
@@ -127,3 +130,42 @@ The `left` coordinate should still be the same: `-100px` from where it originall
         <img id="c" class="card" src="https://image.flaticon.com/icons/png/128/1077/1077976.png" />
     </body>
 </html>
+```
+
+__Activity 7__
+
+Since position absolute is based on the parent, the children of #image-container will also adjust when their parent adjusts positions:
+
+```html
+<html>
+    <head>
+        <style>
+            div#image-container {
+                position: relative;
+                top: 100px;
+            }
+            img.card {
+                height: 200px;
+            }
+            img#a {
+                position: absolute;
+                top: 10px;
+                left: 50px;
+            }
+            img#b {
+                position: absolute;
+                top: 100px;
+                left: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="image-container">
+                <img id="a" class="card" src="https://image.flaticon.com/icons/png/128/70/70367.png" />
+                <img id="b" class="card" src="https://image.flaticon.com/icons/png/128/684/684831.png" />
+            </div>
+        </div>
+    </body>
+</html>
+```
