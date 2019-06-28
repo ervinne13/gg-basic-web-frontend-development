@@ -796,15 +796,6 @@ We may consider each of these work experiences as articles so let's declare the 
 </article>
 ```
 
-<article class="employement-history-entry">
-    <img class="company-logo" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png" alt="NuWorks Interactive Labs. Inc. Logo">
-    <div class="-body">
-        <h4>NuWorks Interactive Labs Inc.</h4>
-        <strong>Role: Fullstack Developer</strong>
-        <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
-    </div>
-</article>
-
 The markup should be something like above. To be able to test well, just make sure you have a relatively long description of your role
 
 Let's make the image rounded first, we can do that by specifying equal `border-radius` to whatever the `width` and `height` is (must be equal).
@@ -897,3 +888,11 @@ For aesthetics, also add some margin at the top of the panel:
 ```
 
 And we're pretty much done. You may add in more of your experiences if you want.
+
+## Next Lessons
+
+We now know quite a lot about HTML and CSS already so we may proceed on actually creating our components now. In fact, we already did one: work history.
+
+Our next lesson should be designing these components individually. Ideally, we'll use something like storybook for this but since we're pressed in time, let's settle on the good old fashion way.
+
+[Click here to view the next lesson](/module/css/desigining-components.md)
