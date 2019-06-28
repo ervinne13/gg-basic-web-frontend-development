@@ -134,23 +134,19 @@ We'll also need to add appropriate paddings in the body:
 
 Why `padding-top: 88px;`? This is because we will be placing the image at the top of this box later on, half of it (`64px`) will consume the box, and the other `24px` is what we want the space of the text and the image to be, hence 64 + 24 = `88px`.
 
-Next is to make it so that the body of the recommendation looks like a box with shadow. We can do that by following the mocks with:
+Next is to make it so that the body of the recommendation looks like a box with shadow. We can do that by following the mocks with (add this in the `style.css` instead):
 
 ```css
-.recommendation .-body {
+.shadowed {
     box-shadow: 0px 0px 50px #414141;
-    padding: 24px;
-    padding-top: 88px;
 }
 ```
 
 The output is weird though. We followed the markup but the shadow seems to be too large. We can control this by adding another value between the size and the color in `box-shadow`. This value is called `spread` which determines how much the shadow is spread, let's make it negative so it's much much more subtle:
 
 ```css
-.recommendation .-body {
+.shadowed {
     box-shadow: 0px 0px 50px -8px #414141;
-    padding: 24px;
-    padding-top: 88px;
 }
 ```
 
@@ -171,7 +167,6 @@ Now to "attach" the image, we can just move the box up and set it's margin to ne
 
 ```css
 .recommendation .-body {
-    box-shadow: 0px 0px 50px -8px #414141;
     padding: 24px;
     padding-top: 88px;
     margin-top: -64px;

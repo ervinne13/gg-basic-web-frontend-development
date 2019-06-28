@@ -1,3 +1,7 @@
 body {
     font-family: "Segoe UI", Arial, sans-serif;
 }
+
+.shadowed {
+    box-shadow: 0px 0px 50px -8px #414141;
+}
