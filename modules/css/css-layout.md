@@ -874,40 +874,26 @@ The possible property values of a box shadow is as follows:
 box-shadow: none|h-offset v-offset blur spread color |inset|initial|inherit;
 ```
 
-What we just did is to provide 0 offset (adding offset will imitate a one sided shadow, try it out) so that shadow is pread around evenly like a border, then add a large blur of `56px`. The value spread = -8px is there to imitate a somewhat rounded blur
+What we just did is to provide 0 offset (adding offset will imitate a one sided shadow, try it out) so that shadow is pread around evenly like a border, then add a large blur of `56px`. The value spread = -8px is there to imitate a somewhat rounded blur. Try experimenting values of your own.
 
-<html>
-    <head>
-        <style>
-            .employement-history-entry {
-                display: flex;
-            }
-            .employement-history-entry > * {
-                display: inline-block;
-            }
-            .employement-history-entry > .-body {
-                margin-left: 20px;
-                box-shadow: 0px 0px 56px -8px black;
-                padding: 0px 15px;
-            }
-            .company-logo {
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-            }
-        </style>
-    </head>
-    <body>
-        <section class="experience-screen">
-            <article class="employement-history-entry">
-                <!-- <div class="company-logo"></div> -->
-                <img class="company-logo" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
-                <div class="-body">
-                    <h4>NuWorks Interactive Labs Inc.</h4>
-                    <strong>Role: Fullstack Developer</strong>
-                    <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
-                </div>
-            </article>
-        </section>
-    </body>
-</html>
+## Centering Contents
+
+With flexbox, centering contents is also very easy. Just justify content to center and you're good to go:
+
+```css
+.employement-history-entry {
+    display: flex;
+    justify-content: center;
+}
+```
+
+For aesthetics, also add some margin at the top of the panel:
+
+```css
+.experience-screen {
+    margin-top: 30px;
+}
+
+```
+
+And we're pretty much done. You may add in more of your experiences if you want.
