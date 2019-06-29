@@ -264,8 +264,29 @@ You should also notice that we are linking a new css called `assets/css/employme
     margin-left: 20px;
     padding: 0px 15px;
     max-width: 500px;
-    box-shadow: 0px 0px 50px #aaaaaa;
 }
 ```
 
 Check and you'll see that we've removed the classes we either removed or replaced in the markup.
+
+## A Preview on Responsive Design
+
+We will learn responsive design in more detail later on but let's do a little spoiler and try to do something neat before we end this session. Let's try to hide a certain part of the view if the page is too small.
+
+Edit the `employment-history.css` file and let's practice on something called a media query:
+
+```css
+@media all and (max-width: 479px) {
+    .employement-history-entry img {
+        display: none;
+    }
+}
+```
+
+Then add the following code inside the `head` tag of your webpage:
+
+```html
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+```
+
+Check your webpage and change the size of the browser, then refresh. You should see that your image will show/hide depending on the screen size now.
