@@ -1,0 +1,23 @@
+.recommendation {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendation > * {
+    margin: auto;
+}
+
+.recommendation img.-circle {
+    z-index: 100;
+}
+
+.recommendation .-body {
+    padding: 24px;
+    padding-top: 88px;
+    margin-top: -64px;
+}
+
+.recommendation .-name {
+    font-weight: bold;
+    color: #B8B8B8;
+}

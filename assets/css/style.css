@@ -2,6 +2,18 @@ body {
     font-family: "Segoe UI", Arial, sans-serif;
 }
 
+img.-circle-sm {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+}
+
+img.-circle {
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+}
+
 .shadowed {
     box-shadow: 0px 0px 50px -8px #414141;
 }

@@ -183,3 +183,89 @@ The image seems transparent though, this is because both components have the sam
 
 Nicely done! Your recommendation component should now be complete
 
+## Designing Components: Employment History Item
+
+This time, we will revise our employment history item so that the styles are better reusable.
+
+Create a new markup `employment-history.html` with the following contents:
+
+```html
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/employment-history.css">
+        <style>
+            body {
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <article class="employement-history-entry">
+            <img class="-circle-sm" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
+            <div class="-body shadowed">
+                <h4>NuWorks Interactive Labs Inc.</h4>
+                <strong>Role: Fullstack Developer</strong>
+                <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
+            </div>
+        </article> 
+    </body>
+</html>
+```
+
+One change you may have noticed from the previous iteration is that the `-body` element now also has a `shadowed` class. This is so that the shadow property is reused and uniform across elements. The previous company logo's class was also changed to `-circle-sm`. Create this class in `style.css`:
+
+```css
+img.-circle-sm {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+}
+```
+
+This is to create a more consistent class the `-circle` class, only smaller.
+
+You should also notice that we are linking a new css called `assets/css/employment-history.css`. Create that file now with the following contents:
+
+```css
+.recommendations-screen {
+    padding: 0 50px;
+}
+
+.recommendations-screen > .-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.recommendation-place-holder {
+    width: 25%;
+    min-width: 200px;
+    height: 400px;
+    background-color: grey;
+}
+
+.experience-screen {
+    margin-top: 30px;
+}
+
+.employement-history-entry > * {
+    display: inline-block;
+}
+
+.employement-history-entry {
+    display: flex;
+    justify-content: center;
+}
+
+.employement-history-entry > .-body {
+    margin-left: 20px;
+    padding: 0px 15px;
+    max-width: 500px;
+    box-shadow: 0px 0px 50px #aaaaaa;
+}
+```
+
+Check and you'll see that we've removed the classes we either removed or replaced in the markup.
