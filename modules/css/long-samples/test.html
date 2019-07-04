@@ -41,6 +41,124 @@
                     text-align: center;
                 }
             }
+
+            section {
+                margin-bottom: 20px;
+            }
+        </style>
+
+        <style>
+            img.-circle-sm {
+                width: 64px;
+                height: 64px;
+                border-radius: 32px;
+            }
+
+            img.-circle {
+                width: 128px;
+                height: 128px;
+                border-radius: 64px;
+            }
+
+            .shadowed {
+                box-shadow: 0px 0px 50px -8px #414141;
+            }
+        </style>
+
+        <style>
+            .grid-container {
+                max-width: 1440px;
+                margin: 0 auto;
+            }
+
+            .grid-container .row {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+            }
+
+            .grid-container .row .col {
+                flex-basis: 33.33%;
+                width: 259px;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .box {
+                background-color: grey;
+                width: 100%;
+                min-height: 100px;;
+            }
+
+            @media(max-width: 1440px) {
+                .grid-container .row .col{
+                    flex-basis: 33.33%;
+                }
+            }
+
+            @media(max-width: 600px) {
+                .grid-container .row .col{
+                    flex-basis: 100%;
+                }
+            }
+        </style>
+
+        <style>
+            .recommendation {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .recommendation > * {
+                margin: auto;
+            }
+
+            .recommendation img.-circle {
+                z-index: 100;
+            }
+
+            .recommendation .-body {
+                padding: 24px;
+                padding-top: 88px;
+                margin-top: -64px;
+            }
+
+            .recommendation .-name {
+                font-weight: bold;
+                color: #B8B8B8;
+            }
+        </style>
+
+        <style>
+            .experience-screen {
+                margin-top: 30px;
+            }
+
+            .employement-history-entry > * {
+                display: inline-block;
+            }
+
+            .employement-history-entry {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+
+            .employement-history-entry > .-body {
+                margin-left: 20px;
+                padding: 0px 15px;
+                max-width: 500px;
+            }
+
+            @media all and (max-width: 600px) {
+                .employement-history-entry img {
+                    display: none;
+                }
+
+                .recommendation-place-holder {
+                    min-width: 70%;
+                }
+            }
         </style>
     </head>
     <body>
@@ -55,6 +173,62 @@
             <div class="-right-image-container">
                 <img src="https://github.com/ervinne13/gg-php-w-laravel-workshop/blob/master/img/Sodusta,%20Ervinne.jpg?raw=true">
             </div>
+        </section>
+        <section class="recommendations-screen">
+            <h1>Awesome People Who Recommends Me</h1>
+            <div class="grid-container">
+                <div class="row">
+                    <div class="col">
+                        <article class="recommendation">
+                            <img class="-circle" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Profile Image">
+                            <div class="-body shadowed">
+                                <span class="-name">Doris Tumulak</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus animi nemo atque commodi explicabo! Doloribus nobis magnam est nesciunt illum inventore adipisci enim autem minus fugiat eos, corrupti, quia rem.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="recommendation">
+                            <img class="-circle" src="https://randomuser.me/api/portraits/women/64.jpg" alt="Profile Image">
+                            <div class="-body shadowed">
+                                <span class="-name">Vanessa Getubig</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus animi nemo atque commodi explicabo! Doloribus nobis magnam est nesciunt illum inventore adipisci enim autem minus fugiat eos, corrupti, quia rem.</p>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col">
+                        <article class="recommendation">
+                            <img class="-circle" src="https://randomuser.me/api/portraits/men/61.jpg" alt="Profile Image">
+                            <div class="-body shadowed">
+                                <span class="-name">Mike Yap</span>
+                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus animi nemo atque commodi explicabo! Doloribus nobis magnam est nesciunt illum inventore adipisci enim autem minus fugiat eos, corrupti, quia rem.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="employement-history">
+            <h1>My Employment History</h1>
+
+            <article class="employement-history-entry">
+                <img class="-circle-sm" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
+                <div class="-body shadowed">
+                    <h4>NuWorks Interactive Labs Inc.</h4>
+                    <strong>August 2016 to Present</strong>
+                    <strong>Role: Fullstack Developer</strong>
+                    <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
+                </div>
+            </article>
+            <article class="employement-history-entry">
+                <img class="-circle-sm" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
+                <div class="-body shadowed">
+                    <h4>Global Strategic Solutions & Service</h4>
+                    <strong>Feb 2012 to Aug 2016</strong>
+                    <strong>Role: Development Team Lead</strong>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, dolorum totam, qui consequatur quia veniam quas cupiditate, amet debitis sit eveniet officiis tenetur. Aliquam reprehenderit voluptas illo cumque modi. Rem!</p>
+                </div>
+            </article>
         </section>
     </body>
 </html>
