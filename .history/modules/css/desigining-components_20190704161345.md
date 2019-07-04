@@ -295,4 +295,4 @@ Check your webpage and change the size of the browser, then refresh. You should 
 
 Now that we know about design and a bit about media queries. Let's revisit css layouts, this time though, while considering responsiveness.
 
-Our next lesson would be Responsive CSS Layouts, [click here](/modules/css/css-layout-responsive.md) to go to the next lesson.
+Our next lesson would be Responsive CSS Layouts, [click here]() to go to the next lesson.

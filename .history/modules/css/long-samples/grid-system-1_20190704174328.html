@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            .container {
+                max-width: 1335px;
+                margin: 0 auto;
+            }
+
+            .container .row {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+            }
+
+            .container .row .col {
+                height: 550px;
+                flex-basis: 20%;
+                -ms-flex: auto;
+                width: 259px;
+                position: relative;
+                padding: 10px;
+                box-sizing: border-box;
+            }
+
+            .box {
+                background-color: grey;
+                width: 100%;
+                min-height: 100px;;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="box">asdf</div>
+                </div>
+                <div class="col">
+                    <div class="box">asdf</div>
+                </div>
+                <div class="col">
+                    <div class="box">adsf</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
