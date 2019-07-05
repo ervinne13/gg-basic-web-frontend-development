@@ -73,6 +73,33 @@ Then create the following markup:
 
 (On your own, do the same for linkdin and github).
 
+## Designing Components: Call to Action
+
+Our call to action is not really a button but a link. It will only be made to look like a button for aesthetic purposes.
+
+Let's start with the markup:
+
+```html
+<a class="call-to-action" href="link-to-my-cv">
+    Download My CV
+</a>
+```
+
+Now for it's styling:
+
+```css
+.call-to-action {
+    padding: 12px 18px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    background-color: #121212;
+}
+```
+
+We don't need to put exact dimensions here, what we need to do instead is set a font size and the padding to create a rectangle.
+The ruleset `text-decoration: none;` is there so that the underline in the link will not be displayed.
+
 ## Designing Components: Testimonial
 
 Write up our initial markup in a new file called `recommendation.html` with the following content:
@@ -90,11 +117,11 @@ Write up our initial markup in a new file called `recommendation.html` with the 
     </head>
     <body>
         <article class="recommendation">
-                <img class="-circle" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Profile Image">
-                <div class="-body">
-                    <span class="-name">Doris Tumulak</span>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus animi nemo atque commodi explicabo! Doloribus nobis magnam est nesciunt illum inventore adipisci enim autem minus fugiat eos, corrupti, quia rem.</p>
-                </div>
+            <img class="-circle" src="https://randomuser.me/api/portraits/women/60.jpg" alt="Profile Image">
+            <div class="-body">
+                <span class="-name">Doris Tumulak</span>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Necessitatibus animi nemo atque commodi explicabo! Doloribus nobis magnam est nesciunt illum inventore adipisci enim autem minus fugiat eos, corrupti, quia rem.</p>
+            </div>
         </article>
     </body>
 </html>
@@ -205,6 +232,7 @@ Create a new markup `employment-history.html` with the following contents:
             <img class="-circle-sm" src="https://helium.nuworks.ph/img/nuworks-logo-colored.png">
             <div class="-body shadowed">
                 <h4>NuWorks Interactive Labs Inc.</h4>
+                <span class="sub-h4">August 2016 to Present</span>
                 <strong>Role: Fullstack Developer</strong>
                 <p>Provided high quality PHP (Laravel) and JavaScript (MERN) based applications depending on client needs.</p>
             </div>
@@ -265,6 +293,13 @@ You should also notice that we are linking a new css called `assets/css/employme
     padding: 0px 15px;
     max-width: 500px;
 }
+
+span.sub-h4 {
+    font-weight: bold;
+    color: #9e9e9e;
+    display: block;
+}
+
 ```
 
 Check and you'll see that we've removed the classes we either removed or replaced in the markup.

@@ -1,0 +1,203 @@
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #414141;
+    background-color: #f2f3f7;
+}
+
+img.-circle-sm {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+}
+
+img.-circle {
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+}
+
+.white-box {
+    background-color: white;
+}
+
+.shadowed {
+    box-shadow: 0px 0px 14px -8px #414141;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+/* Generic 3 columned grid styling */
+.grid-container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.grid-container .row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.grid-container .row .col {
+    flex-basis: 33.33%;
+    width: 259px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.box {
+    background-color: grey;
+    width: 100%;
+    min-height: 100px;;
+}
+
+@media(max-width: 1440px) {
+    .grid-container .row .col{
+        flex-basis: 33.33%;
+    }
+}
+
+@media(max-width: 600px) {
+    .grid-container .row .col{
+        flex-basis: 100%;
+    }
+}
+/* End of generic 3 columned grid styling */
+
+/* Main Screen Styling */
+.main-screen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.hero-title {
+    font-weight: 500;
+    font-size: 65px;
+}
+
+.main-screen .-content {
+    flex: 1;
+    padding: 120px 75px;
+}
+
+.main-screen .-content, 
+.main-screen .-right-image-container img {
+    height: 100%;
+}
+
+.call-to-action-container {
+    margin-top: 28px;
+}
+
+.call-to-action {
+    padding: 12px 18px;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    background-color: #121212;
+}
+
+@media(max-width: 600px) {
+    .main-screen .-right-image-container {
+        display: none;
+    }
+
+    .hero-title {
+        font-weight: 400;
+        font-size: 45px;
+    }
+
+    .-content {
+        text-align: center;
+    }
+}
+/* End if Main Screen Styling */
+
+/* Recommendation screen styling */
+.recommendation {
+    display: flex;
+    flex-direction: column;
+}
+
+.recommendation > * {
+    margin: auto;
+}
+
+.recommendation img.-circle {
+    z-index: 100;
+}
+
+.recommendation .-body {
+    padding: 24px;
+    padding-top: 88px;
+    margin-top: -64px;
+}
+
+.recommendation .-name {
+    font-weight: bold;
+    color: #B8B8B8;
+}
+/* End of recommendation screen styling */
+
+/* Work history screen */
+.experience-screen {
+    margin-top: 30px;
+}
+
+.employement-history-entry > * {
+    display: inline-block;
+}
+
+.employement-history-entry {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.employement-history-entry > .-body {
+    margin-left: 20px;
+    padding: 0px 15px;
+    max-width: 500px;
+}
+
+span.sub-h4 {
+    font-weight: bold;
+    color: #9e9e9e;
+    display: block;
+}
+
+@media all and (max-width: 600px) {
+    .employement-history-entry img {
+        display: none;
+    }
+
+    .recommendation-place-holder {
+        min-width: 70%;
+    }
+}
+/* End of work history screen */
+
+/* Animations */
+
+.fade-in-right {
+    animation-name: fadeInRight;
+    animation-duration: 1s;
+}
+
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* End of animations */

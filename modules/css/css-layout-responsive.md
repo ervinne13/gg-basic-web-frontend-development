@@ -206,3 +206,9 @@ We'll also need to make the hero title a bit smaller and centered when the scree
 ```
 
 Nicely done, now we just have to stitch in everything and we should be able to finish our portfolio!
+
+## Next Session
+
+You now have two options. Build your portfolio right away (just find a good place to upload your assets), or learn webpack first to be able to properly handle your assets and better organize your code. With our limited time though, we can only really explore an introduction to webpack. So for now, lets do our project the way we know how to do it.
+
+[Click here](/modules/project/portfolio-static.md) to proceed to finalizing our project.
